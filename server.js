@@ -1,30 +1,26 @@
-// TODO
-//
-
-const mysql = require('mysql2');
-
-// Create the connection to database
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    // Your MySQL username
-    user: 'root',
-    // Your MySQL password
-    password: 'CammiAnn90',
-    database: 'business'
-});
-
-connection.connect(err => {
-    if (err) throw err;
-    console.log('connected as id ' + connection.threadId);
-    afterConnection();
-});
-
-afterConnection = () => {
-    connection.query('SELECT * FROM employee', function(err, res) {
-        if (err) throw error;
-        // Log the results in the console
-        console.log(res);
-        connection.end();
-    });
+const inquirer = require('inquirer');
+const connection = require('./db/database');
+const employee = require('./lib/employee');
+const department = require('./lib/department');
+const role = require('./lib/role');
+/*
+const startQuestion = () => {
+    return inquirer.prompt({
+            type: 'list',
+            name: 'start',
+            message: 'What would you like to do?',
+            choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add A Role', 'Add An Employee', 'Update Employee Role']
+        })
+        .then(function(answer) {
+            if (answer === 'View All Departments') {
+                getDepartment();
+            }
+        })
 };
+*/
+
+
+//startQuestion()
+// getEmployee();
+// updateEmployee();
+// deleteEmployee();
