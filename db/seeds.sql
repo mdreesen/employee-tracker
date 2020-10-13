@@ -1,24 +1,24 @@
 -- employee
-INSERT INTO employee (first_name, last_name, job_title)
+INSERT INTO employee (first_name, last_name, job_title, role_id)
 VALUES 
-('Tyrone', 'Wilkinson', 'Manager'),
+('Tyrone', 'Wilkinson', 'Manager', 1),
 ('Milo', 'Boone', 'Accountant'),
 ('Cody', 'Redmond', 'Engineer'),
 ('Jun', 'Davison', 'Sales');
 
 -- Role
-INSERT INTO role (title, salary, department)
+INSERT INTO role (id, title, salary, department_id)
 VALUES
-('Manager', 50000, 'General_Management'),
-('Accountant', 50000, 'Finance'),
+(1, 'Manager', 50000, 1),
+('Accountant', 50000, 2),
 ('Engineer', 50000, 'Operations'),
 ('Sales', 50000, 'Sales');
 
 
 -- Department
-INSERT INTO department (name)
+INSERT INTO department (id, name)
 VALUES
-('General_Management'),
-('Finance'),
+(1, 'General_Management'),
+(2, 'Finance'),
 ('Operations'),
 ('Training');
